@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ revisons are tip of kirkstone branches as of 14 Aug 2025
+-->
+<manifest>
+  <remote name="github"
+         fetch="https://github.com/"/>
+
+  <remote name="oe-org"
+         fetch="https://git.openembedded.org"/>
+
+  <remote name="yocto"
+         fetch="https://git.yoctoproject.org/"/>
+
+  <default remote="github" revision="master" sync-j="32" />
+
+<!--tip of kirkstone-->
+  <project remote="github"
+             name="yoctoproject/poky"
+         revision="39df9602b1c0339519be81d1cba9a4a25379309a"
+         upstream="kirkstone"
+             path="."/>
+
+  <project remote="oe-org"
+             name="meta-openembedded"
+         upstream="kirkstone"
+         revision="06fc0278f10d630838d703dde707bbf0e2999873"
+             path="meta-openembedded"/>
+
+<!--kirkstone-->
+  <project remote="yocto"
+             name="meta-virtualization"
+         revision="3e4dba95e6b5f5f68d0b3a5899b106c89da59428"
+             path="meta-virtualization"/>
+
+  <project remote="github"
+             name="stagingrdkm/meta-rdk-app-sdk-base-dev"
+         revision="main"
+             path="meta-rdk-app-sdk-base-dev"/>
+
+</manifest>
