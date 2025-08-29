@@ -14,7 +14,7 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   repo init -u https://github.com/stagingrdkm/meta-rdk-app-sdk-base-dev/ -m manifests/manifest-base.xml  
   repo sync --no-clone-bundle -v -j$(getconf _NPROCESSORS_ONLN)
 
-  #yocto poky build environment setup script. Once per shell you are building in 
+  #yocto poky build environment setup script. Once per shell you are building in  
   source oe-init-build-env
 
   #modify in local.conf DISTRO var to value "rdk-app-base-layer", edit to: DISTRO ?= "rdk-app-base-layer". Once per "abuild" setup  

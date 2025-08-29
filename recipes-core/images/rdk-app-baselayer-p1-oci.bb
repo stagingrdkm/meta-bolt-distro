@@ -1,10 +1,14 @@
 SUMMARY = "RDK base layer image for apps, profile1"
 
+IMAGE_FSTYPES = "container oci"
+
+inherit image
+inherit image-oci
+
+
 # TODO: Do we need different locale info in the base image ?
 IMAGE_LINGUAS = " "
 
-# TODO: Further trim down, review, can do without? https://github.com/yoctoproject/poky/blob/kirkstone/meta/recipes-core/packagegroups/packagegroup-core-boot.bb
-IMAGE_INSTALL = "packagegroup-core-boot"
 
 IMAGE_INSTALL:append = " libstdc++"
 IMAGE_INSTALL:append = " zlib"
@@ -35,9 +39,6 @@ IMAGE_INSTALL:append = " rialto-gstreamer"
 IMAGE_FEATURES += "read-only-rootfs"
 
 LICENSE = "MIT"
-
-inherit core-image
-
 
 TOOLCHAIN_TARGET_TASK:append = " libstdc++-dev"
 TOOLCHAIN_TARGET_TASK:append = " dobby-init-dev"
@@ -73,3 +74,23 @@ add_ca_certificate_mount_points() {
    install -d ${IMAGE_ROOTFS}/usr/share/ca-certificates
 }
 
+# Is this required? Point first exec in oci image. need to test/check if needed for now point to empty or DobbyInit
+OCI_IMAGE_ENTRYPOINT = "/usr/libexec/DobbyInit"
+
+OCI_IMAGE_TAR_OUTPUT=""
+
+IMAGE_CMD:oci:append() {
+
+    if [ -n "$image_name" ]; then
+        file_name="$image_name.tar"
+    else
+        image_name="${IMAGE_NAME}${IMAGE_NAME_SUFFIX}-oci"
+        file_name="${IMAGE_NAME}${IMAGE_NAME_SUFFIX}-oci-${OCI_IMAGE_TAG}-${OCI_IMAGE_ARCH}${OCI_IMAGE_SUBARCH:+"-$OCI_IMAGE_SUBARCH"}-linux.oci-image.tar"
+    fi
+
+    if [ -z "${OCI_IMAGE_TAR_OUTPUT}" ]; then
+        tar --sort=name --format=posix --numeric-owner -cf ${file_name} -C ${image_name} .
+    fi
+
+    ln -fs ${file_name} ${IMAGE_BASENAME}.tar
+}
