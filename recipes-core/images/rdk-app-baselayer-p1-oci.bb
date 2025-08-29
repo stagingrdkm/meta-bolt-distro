@@ -34,6 +34,10 @@ IMAGE_INSTALL:append = " rialto-client"
 IMAGE_INSTALL:append = " rialto-ocdm"
 IMAGE_INSTALL:append = " rialto-gstreamer"
 
+# Current assumption is busybox will be part of base-layer. 
+#Possibly later moved to debug base layer extension and use other shell provider like "dash" package as in meta-dac-sdk 
+# adding busybox explicitly for now. Alternative might be in distro config PREFERRED_PROVIDER_virtual/sh = "busybox" or PREFERRED_PROVIDER_virtual/base-utils = "busybox"
+IMAGE_INSTALL:append = " busybox"
 
 # Create a readonly rootfs
 IMAGE_FEATURES += "read-only-rootfs"
