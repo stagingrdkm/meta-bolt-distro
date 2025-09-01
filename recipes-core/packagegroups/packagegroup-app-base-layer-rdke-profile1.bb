@@ -10,14 +10,14 @@ SUMMARY = "App Base layer profile1 for RDKE aka Standard profile"
 
 LICENSE = "MIT"
 
-inherit packagegroup
-
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 # TODO, define set of BASE_LAYER machines, target arch 
 # PACKAGE_ARCH = "${TARGET_ARCH}"
 
-PV = "0.1.0"
-PR = "r0"
+inherit packagegroup
+
+PV = "0.1.1"
+PR = "r1"
 
 # Install glib-2.0 but without the mime info as this also pulls in libxml2
 RDEPENDS:${PN} += " glib-2.0"

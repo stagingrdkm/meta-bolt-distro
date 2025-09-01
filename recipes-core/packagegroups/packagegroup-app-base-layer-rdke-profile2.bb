@@ -10,10 +10,10 @@ SUMMARY = "App Base layer profile2 for RDKE aka Slim profile"
 
 LICENSE = "MIT"
 
-inherit packagegroup
-
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 # TODO add common arch
+
+inherit packagegroup
 
 PV = "0.1.0"
 PR = "r0"

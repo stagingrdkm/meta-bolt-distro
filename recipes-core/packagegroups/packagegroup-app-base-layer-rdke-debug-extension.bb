@@ -4,6 +4,9 @@
 SUMMARY = "App Base layer debug extension packages for RDKE profiles"
 LICENSE = "MIT"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+# TODO add common arch
+
 inherit packagegroup
 
 PV = "0.1.0"
