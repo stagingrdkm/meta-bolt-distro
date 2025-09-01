@@ -17,8 +17,9 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   #yocto poky build environment setup script. Once per shell you are building in  
   source oe-init-build-env
 
-  #modify in local.conf DISTRO var to value "rdk-app-base-layer", edit to: DISTRO ?= "rdk-app-base-layer". Once per "abuild" setup  
+  #set in local.conf DISTRO to "rdk-app-base-layer" and MACHINE config to one of supported machines  
   vi conf/local.conf  
+  #set  [ DISTRO ?= "rdk-app-base-layer" ] [ MACHINE = "rdk-arm" ]. Once per "abuild" setup  
 
   #doublecheck $grep DISTRO conf/local.conf  Need to see DISTRO ?= "rdk-app-base-layer"  
 
