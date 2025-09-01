@@ -26,7 +26,7 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   cp ../.repo/manifests/manifests/bblayers.conf conf/  
 
   #build the base image, rdk-app-base-image-1 stands for profile 1 of base image.  
-  bitbake rdk-app-baselayer-p1-oci
+  bitbake rdke-app-baselayer-p1-oci
   
 
 

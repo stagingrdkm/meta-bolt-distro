@@ -12,6 +12,9 @@ LICENSE = "MIT"
 
 inherit packagegroup
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+# TODO add common arch
+
 PV = "0.1.0"
 PR = "r0"
 
@@ -33,11 +36,10 @@ RDEPENDS:${PN} += "\
      westeros-simpleshell \
      essos \
 "
-# Include the rialto libraries
+# Include the rialto libraries but not rialto-gstreamer
 RDEPENDS:${PN} += "\
      rialto-client \
      rialto-ocdm \
-#     rialto-gstreamer \
 "
 # Current assumption is busybox will be part of Standard Profile of base-layer 
 # Possibly later moved to debug base layer extension and use other shell provider like "dash" instead

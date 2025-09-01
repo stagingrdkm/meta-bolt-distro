@@ -12,6 +12,10 @@ LICENSE = "MIT"
 
 inherit packagegroup
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+# TODO, define set of BASE_LAYER machines, target arch 
+# PACKAGE_ARCH = "${TARGET_ARCH}"
+
 PV = "0.1.0"
 PR = "r0"
 
