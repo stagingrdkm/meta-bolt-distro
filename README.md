@@ -10,7 +10,7 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
 
   #initialise and code sync with repo tool the manifest with repositories for this App SDK base layer project  
   #repo init is once per "abuild" dir setup  
-  repo init -u https://github.com/stagingrdkm/meta-rdk-app-sdk-base-dev/ -m manifests/manifest-base.xml  
+  repo init -u https://github.com/stagingrdkm/meta-rdke-appsdk-base-dev/ -m manifests/manifest-base.xml  
   repo sync --no-clone-bundle -v -j$(getconf _NPROCESSORS_ONLN)
 
   #yocto poky build environment setup script. Once per shell you are building in  
