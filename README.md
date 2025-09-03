@@ -16,10 +16,11 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   #yocto poky build environment setup script. Once per shell you are building in  
   source oe-init-build-env
 
-  #set in conf/local.conf DISTRO to "rdk-app-base-layer" and MACHINE config to one of supported machines  
+  #configure your conf/local.conf and set DISTRO to "rdke-appsdk" and MACHINE config to one of supported machines   
+  #there is template you can copy from  
+  cp conf/templates/local.conf.sample conf/local.conf  
   vi conf/local.conf  
-  DISTRO = "rdk-app-base-layer"  
-  #doublecheck $grep DISTRO conf/local.conf  Need to see DISTRO = "rdk-app-base-layer"  
+  #doublecheck $grep DISTRO conf/local.conf  Need to see DISTRO = "rdke-appsdk"  
 
   #The App SDK supports 4 ABI's  
   #You need to configure associated machine in conf/local.conf of your build/ dir. for example:  
@@ -34,12 +35,12 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   #For example to build base-layer image with such machine config you must use "bitbake lib32-rdke-app-baselayer-p1-oci"  
   
   #coppy prepared bblayers.conf file from meta-rdk-app-sdk-base/manifest repo to local bblayers.conf. Once per "abuild" setup  
-  cp ../.repo/manifests/manifests/bblayers.conf conf/  
+  cp conf/templates/bblayers.conf.sample conf/bblayers.conf   
 
   #build the base image, rdk-app-base-image-1 stands for profile 1 of base image.  
-  bitbake rdke-app-baselayer-p1-oci  
+  bitbake rdke-app-baselayer-p1  
   #or when MACHINE=rdk-arm32on64 use  
-  bitbake lib32-rdke-app-baselayer-p1-oci
+  bitbake lib32-rdke-app-baselayer-p1
 
 
   
