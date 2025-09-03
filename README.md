@@ -18,7 +18,7 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
 
   #configure your conf/local.conf and set DISTRO to "rdke-appsdk" and MACHINE config to one of supported machines   
   #there is template you can copy from  
-  cp conf/templates/local.conf.sample conf/local.conf  
+  cp ../meta-rdke-appsdk-base-dev/conf/templates/local.conf.sample conf/local.conf  
   vi conf/local.conf  
   #doublecheck $grep DISTRO conf/local.conf  Need to see DISTRO = "rdke-appsdk"  
 
@@ -32,10 +32,11 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   #3."rdk-arm64p" 	  - arm 64bit mode (pure 64bit mode obviously with 64bit kernel, RDK is not fully supporting this yet)  
   #4."rdk-x86_64"	  - x86 64bit mode, for running of x86 PC/virtual device  
   #When you choose as machine "rdk-arm32on64" you need to add "lib32-" prefix when executing bitbake recipes.  
-  #For example to build base-layer image with such machine config you must use "bitbake lib32-rdke-app-baselayer-p1-oci"  
+  #For example to build base-layer you'll have to then issue command "bitbake lib32-rdke-app-baselayer-p1"  
   
-  #coppy prepared bblayers.conf file from meta-rdk-app-sdk-base/manifest repo to local bblayers.conf. Once per "abuild" setup  
-  cp conf/templates/bblayers.conf.sample conf/bblayers.conf   
+  #coppy prepared bblayers.conf file from meta-rdke-appsdk-base/manifest repo to local bblayers.conf.  
+  #Once per "abuild" setup  
+  cp ../meta-rdke-appsdk-base-dev/conf/templates/bblayers.conf.sample conf/bblayers.conf  
 
   #build the base image, rdk-app-base-image-1 stands for profile 1 of base image.  
   bitbake rdke-app-baselayer-p1  
