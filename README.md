@@ -1,5 +1,5 @@
-# meta-rdk-app-sdk-base-dev
-repo for App SDK Base Layer definition &amp; development, version tracking and base layer image generation.  
+# meta-rdke-appsdk-base-dev
+repo for App SDK Base Layer definition &amp; development, version tracking and base layer image generation in yocto.  
 # how to setup and build
   #Pre-requisite : host build machine is setup for yocto kirkstone building and has google repo tool installed, see  
   #"Build host deps for yocto https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#build-host-packages" and  
