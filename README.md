@@ -19,6 +19,7 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   #configure your conf/local.conf and set DISTRO to "rdke-appsdk" and MACHINE config to one of supported machines   
   #there is template you can copy from  
   cp ../meta-rdke-appsdk-base-dev/conf/templates/local.conf.sample conf/local.conf  
+  cp -r ../meta-rdke-appsdk-base-dev/conf/templates/mu* conf/.  
   vi conf/local.conf  
   #doublecheck $grep DISTRO conf/local.conf  Need to see DISTRO = "rdke-appsdk"  
 
@@ -27,9 +28,9 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   vi conf/local.conf  
   MACHINE = "arm"  
   #You need to select one of the following machine configurations:  
-  #1."arm" 	  - arm 32bit mode, APP SDK is only for compiling Apps in userland, can be running 32bit or 64bit kernel in mixed mode 
-  #2."arm64" 	  - arm 64bit mode (requires 64bit kernel, RDK is not fully supporting RDK Middleware in full 64bit mode yet)  
-  #3."amd64"	  - x86 64bit mode, for running of x86 PC/virtual device  
+  #1."arm"   - arm 32bit mode, APP SDK is only for compiling Apps in userland, kernel can be running 32bit or 64bit mixed mode  
+  #2."arm64" - arm 64bit mode (requires 64bit kernel, RDK is not fully supporting RDK Middleware in full 64bit mode yet)  
+  #3."amd64" - x86 64bit mode, for running of x86 PC/virtual device  
   
   #coppy prepared bblayers.conf file from meta-rdke-appsdk-base/manifest repo to local bblayers.conf.  
   #Once per "abuild" setup  
