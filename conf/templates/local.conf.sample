@@ -44,13 +44,12 @@
 ##4."rdk-x86_64" - x86 64bit mode, for running of x86 PC/virtual device
 ##When you choose as machine "rdk-arm32on64" you need to add "lib32-" prefix when executing bitbake recipes.
 ##For example to build base-layer image with such machine config you must use "bitbake lib32-rdke-app-baselayer-p1"
-# choose appropriate machine by uncommenting, defaulting to "rdk-arm32on64" in template
+# choose appropriate machine by uncommenting, defaulting to "arm" in template
 
-#MACHINE = "rdk-x86_64"
-#MACHINE = "rdk-arm"
-MACHINE = "rdk-arm32on64"
-#MACHINE = "rdk-arm64p"
-#MACHINE = "rdk-x86_64"
+MACHINE = "arm"
+#MACHINE = "arm64"
+#MACHINE = "amd64"
+#MACHINE = "rdk-arm32on64"
 
 #
 # Where to place downloads
