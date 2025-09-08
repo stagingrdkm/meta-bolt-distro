@@ -5,6 +5,9 @@ IMAGE_FSTYPES = "container oci"
 inherit image
 inherit image-oci
 
+# uncomment to generate from libs in the rootfs the .so depedency tree and offered API version
+# output is $MACHINE_libs.json in DEPLOY_DIR_IMAGE
+#inherit generate_libs_json
 
 # TODO: Do we need different locale info in the base image ?
 IMAGE_LINGUAS = " "
