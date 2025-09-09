@@ -15,42 +15,21 @@
 #
 # Machine Selection
 #
-# You need to select a specific machine to target the build with. There are a selection
-# of emulated machines available which can boot and run in the QEMU emulator:
+#For the RDK-E App SDK you need to select one of the following machine configurations. Is CPU arch naming convention used in container world :
+##1."arm" - arm 32bit mode, SDK is only for compiling Apps in userland, kernel can be running 32bit or 64bit mixed mode
+##2."arm64" - arm 64bit mode, requires 64bit kernel, RDK middleware is not fully supporting 64bit mode yet
+##3."amd64" - x86 64bit mode, for running of x86 PC/virtual device86
 #
-#MACHINE ?= "qemuarm"
-#MACHINE ?= "qemuarm64"
-#MACHINE ?= "qemumips"
-#MACHINE ?= "qemumips64"
-#MACHINE ?= "qemuppc"
-#MACHINE ?= "qemux86"
-#MACHINE ?= "qemux86-64"
-#
-# There are also the following hardware board target machines included for 
-# demonstration purposes:
-#
-#MACHINE ?= "beaglebone-yocto"
-#MACHINE ?= "genericx86"
-#MACHINE ?= "genericx86-64"
-#MACHINE ?= "edgerouter"
-#
-# This sets the default machine to be qemux86-64 if no other machine is selected:
-#MACHINE ??= "qemux86-64"
-#
-#For the RDK-E App SDK you need to select one of the following machine configurations:
-##1."rdk-arm" - arm 32bit mode on 32bit kernel
-##2."rdk-arm32on64" - arm 32bit userland on 64bit kernel (so called mixed mode)
-##3."rdk-arm64p" - arm 64bit mode (pure 64bit mode obviously with 64bit kernel, RDK is not fully supporting this yet)
-##4."rdk-x86_64" - x86 64bit mode, for running of x86 PC/virtual device
-##When you choose as machine "rdk-arm32on64" you need to add "lib32-" prefix when executing bitbake recipes.
-##For example to build base-layer image with such machine config you must use "bitbake lib32-rdke-app-baselayer-p1"
 # choose appropriate machine by uncommenting, defaulting to "arm" in template
-
 MACHINE = "arm"
 #MACHINE = "arm64"
 #MACHINE = "amd64"
-#MACHINE = "rdk-arm32on64"
-
+#
+#Because of MULTICONFIG setup it is possible to compile for all 3 CPU arch in one command. 
+#compilation will happen sequentually and output will be 3 separate images in deploy dir. Command to use for that is following:
+#bitbake rdke-app-baselayer-p1:multiconfig:arm rdke-app-baselayer-p1:multiconfig:arm64 rdke-app-baselayer-p1:multiconfig:amd64
+#
+BBMULTICONFIG = "arm arm64 amd64"
 #
 # Where to place downloads
 #
