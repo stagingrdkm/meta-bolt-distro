@@ -37,9 +37,10 @@ RDEPENDS:${PN} += "\
      essos \
 "
 # Include the rialto libraries but not rialto-gstreamer
+# TODO HACK for now. 
+# It seems rialto-ocdm is dragging in gstreamer, removing because want to see effect in profile2 when no gstreamer inside
 RDEPENDS:${PN} += "\
      rialto-client \
-     rialto-ocdm \
 "
 # Current assumption is busybox will be part of Standard Profile of base-layer. 
 # test with using "dash" instead in slim Profile (Profile2)
