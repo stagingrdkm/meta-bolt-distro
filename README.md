@@ -20,7 +20,7 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
   #there is template you can copy from  
   cp ../meta-rdke-appsdk-base-dev/conf/templates/local.conf.sample conf/local.conf  
   cp ../meta-rdke-appsdk-base-dev/conf/templates/bblayers.conf.sample conf/bblayers.conf  
-  #copy MULTICONFIG template to allow compilation for all machines in one command
+  #copy MULTICONFIG template to allow compilation for all machines in one command  
   cp -r ../meta-rdke-appsdk-base-dev/conf/templates/mu* conf/.  
   vi conf/local.conf  
   #doublecheck DISTRO = "rdke-appsdk"  
