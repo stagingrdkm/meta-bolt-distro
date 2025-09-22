@@ -1,4 +1,5 @@
 SUMMARY = "RDKE base layer image for apps, profile2"
+LICENSE = "MIT"
 
 IMAGE_FSTYPES = "container oci"
 
@@ -17,8 +18,6 @@ IMAGE_INSTALL:append = " packagegroup-app-base-layer-rdke-profile2"
 
 # Create a readonly rootfs
 IMAGE_FEATURES += "read-only-rootfs"
-
-LICENSE = "MIT"
 
 TOOLCHAIN_TARGET_TASK:append = " libstdc++-dev"
 TOOLCHAIN_TARGET_TASK:append = " dobby-init-dev"

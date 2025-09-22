@@ -1,5 +1,5 @@
 DESCRIPTION = "Recipe to include the latest OCDM header files"
-LICENSE = "CLOSED"
+LICENSE = "Apache-2.0"
 
 SRC_URI = "file://open_cdm.h \
            file://open_cdm_ext.h \

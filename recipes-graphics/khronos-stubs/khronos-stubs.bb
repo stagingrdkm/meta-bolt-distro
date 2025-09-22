@@ -6,7 +6,7 @@ It is expected that at runtime these libraries are swapped out with vendor \
 supplied versions. \
 "
 
-LICENSE          = "CLOSED"
+LICENSE          = "MIT & Apache-2.0"
 HOMEPAGE         = "https://github.com/stagingrdkm/khronos-stubs"
 
 SRC_URI          = "git://git@github.com/stagingrdkm/khronos-stubs.git;protocol=https;branch=main"
