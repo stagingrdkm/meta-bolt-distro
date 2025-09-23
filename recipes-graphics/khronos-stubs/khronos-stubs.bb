@@ -7,10 +7,11 @@ supplied versions. \
 "
 
 LICENSE          = "MIT & Apache-2.0"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=e7a4bfe3b44b069785947f263062d29f"
 HOMEPAGE         = "https://github.com/stagingrdkm/khronos-stubs"
 
 SRC_URI          = "git://git@github.com/stagingrdkm/khronos-stubs.git;protocol=https;branch=main"
-SRCREV           = "7be7474b1a457d017c7ad07e6076a79fb1afbaf3"
+SRCREV           = "39b75e8b03554cf3c6fa777396c2680d53dee79e"
 
 S                = "${WORKDIR}/git"
 
