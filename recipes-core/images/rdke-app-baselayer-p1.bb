@@ -19,6 +19,8 @@ IMAGE_INSTALL:append = " packagegroup-app-base-layer-rdke-profile1"
 # Create a readonly rootfs
 IMAGE_FEATURES += "read-only-rootfs"
 
+NO_RECOMMENDATIONS = "1"
+
 TOOLCHAIN_TARGET_TASK:append = " libstdc++-dev"
 TOOLCHAIN_TARGET_TASK:append = " dobby-init-dev"
 
