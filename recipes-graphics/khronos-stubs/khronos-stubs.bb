@@ -11,7 +11,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=e7a4bfe3b44b069785947f263062d29f"
 HOMEPAGE         = "https://github.com/stagingrdkm/khronos-stubs"
 
 SRC_URI          = "git://git@github.com/stagingrdkm/khronos-stubs.git;protocol=https;branch=main"
-SRCREV           = "39b75e8b03554cf3c6fa777396c2680d53dee79e"
+SRCREV           = "fcea14e15bf6062082fa4cc6580f197db5be61eb"
 
 S                = "${WORKDIR}/git"
 
