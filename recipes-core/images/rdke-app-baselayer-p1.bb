@@ -6,6 +6,10 @@ IMAGE_FSTYPES = "container oci"
 inherit image
 inherit image-oci
 
+# TODO P3 clarify with legal if we cannot set this INCOMPATIBLE_LICESE here at image level as recommend by yocto community iso setting it global at distro level
+# currently set at distro level because legal safest but has tech drawbacks
+#INCOMPATIBLE_LICENSE = "LGPL-3.0-or-later LGPL-3.0-only GPL-3.0-or-later GPL-3.0-only"
+
 # uncomment to generate from libs in the rootfs the .so depedency tree and offered API version
 # output is $MACHINE_libs.json in DEPLOY_DIR_IMAGE
 #inherit generate_libs_json
