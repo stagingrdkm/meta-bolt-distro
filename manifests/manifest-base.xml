@@ -36,6 +36,6 @@
   <project remote="github"
              name="stagingrdkm/meta-rdke-appsdk-base-dev"
          revision="develop"
-             path="meta-rdke-appsdk-base-dev"/>
+             path="bolt"/>
 
 </manifest>

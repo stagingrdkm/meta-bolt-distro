@@ -16,7 +16,7 @@ BBLAYERS ?= " \
   ${TOPDIR}/../meta-openembedded/meta-networking \
   ${TOPDIR}/../meta-openembedded/meta-multimedia \
   ${TOPDIR}/../meta-virtualization \
-  ${TOPDIR}/../meta-rdke-appsdk-base-dev \
+  ${TOPDIR}/../bolt/meta-bolt-base \
 "
 
 # BBLAYERS += "${@'${TOPDIR}/../meta-add' if os.path.isfile('${TOPDIR}/../meta-add/conf/layer.conf') else ''}"
