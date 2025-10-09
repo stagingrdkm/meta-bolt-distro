@@ -7,7 +7,7 @@
  image recipe for bolt base layer profile1 :  bitbake rdke-app-baselayer-p1
 -->
 <manifest>
-  <include name="sdk-oss/oss.kirkstone.xml" />
+  <include name="manifests/sdk-oss/oss.kirkstone.xml" />
 
   <project remote="github" name="stagingrdkm/meta-rdke-appsdk-base-dev" revision="nameChange2-meta-bolt-base" path="bolt"/>
 
