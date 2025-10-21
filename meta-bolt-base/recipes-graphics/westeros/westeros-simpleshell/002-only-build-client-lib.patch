@@ -1,3 +1,10 @@
+##############################################
+Date: 2025-06-16
+From: ben.gray@sky.uk
+Source: Sky
+Subject: App SDK is for apps only, so only include client part not server part as well
+##############################################
+
 --- a/simpleshell/Makefile.am	2025-06-16 22:42:53.706900219 +0100
 +++ b/simpleshell/Makefile.am	2025-06-16 22:48:24.008288919 +0100
 @@ -26,7 +26,7 @@
