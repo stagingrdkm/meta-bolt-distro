@@ -1,5 +1,10 @@
-Fixes the ESSOS build so that it can build a westeros / wayland client
-version that doesn't require the xkbcommon library.
+##############################################
+Date: 2025-06-25 14:21:18
+From: ben.gray@sky.uk
+Source: Sky
+Subject: Fixes the ESSOS build so that it can build a westeros / wayland client
+ version that doesn't require the xkbcommon library.
+############################################
 
 --- a/Makefile.am	2025-06-25 14:11:05.727735840 +0100
 +++ b/Makefile.am	2025-06-25 14:21:18.578255063 +0100
