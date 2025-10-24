@@ -1,11 +1,10 @@
 DESCRIPTION = "Recipe to include the latest OCDM header files"
 LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=70514b59ff7b36bbbc30d093c6814d8e"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
 SRC_URI = "file://open_cdm.h \
            file://open_cdm_ext.h \
            file://open_cdm_adapter.h \
-           file://LICENSE \  
           "
 
 S = "${WORKDIR}"

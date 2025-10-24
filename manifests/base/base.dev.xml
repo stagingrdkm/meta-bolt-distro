@@ -9,6 +9,6 @@
 <manifest>
   <include name="manifests/sdk-oss/oss.kirkstone.xml" />
 
-  <project remote="github" name="stagingrdkm/meta-rdke-appsdk-base-dev" revision="develop" path="bolt"/>
+  <project remote="github" name="rdkcentral/meta-bolt-distro" revision="develop" path="bolt"/>
 
 </manifest>

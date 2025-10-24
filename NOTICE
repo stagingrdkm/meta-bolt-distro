@@ -1,9 +1,10 @@
-This repo contains meta-layer that defines base-layer for Native App SDK and is part of associated Yocto Project build system.
-It contains
+This repo contains meta-layers that go with a Yocto build system.
+
+It contains files which are:
 Copyright COPYRIGHT_HOLDERS
 Licensed under the MIT License
 
-Some material:
+Some files are:
 Copyright COPYRIGHT_HOLDERS
 Licensed under the Apache License, Version 2.0
 

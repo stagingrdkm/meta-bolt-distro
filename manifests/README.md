@@ -1,5 +1,5 @@
 # manifests
-There are application, runtime and base layer artifacts that can be build with this Firebolt Native App Yocto SDK which is also called "bolt-sdk".
+There are application, runtime and base layer artifacts that can be build with this Firebolt Yocto based meta-bolt-distro.
 
 To build specific artifact you need to repo init the associated manifest file within this manifest dir structure using the repo tool.
 That will fetch the git repositories outlined in the manifest and required to build your artifact.
