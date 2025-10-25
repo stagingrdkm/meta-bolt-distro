@@ -1,6 +1,6 @@
-# meta-rdke-appsdk-base-dev
-repo for App SDK Base Layer definition &amp; development, version tracking and base layer image generation in yocto.  
-# how to setup and build
+# meta-bolt-distro
+Repository providing Yocto Project distribution allowing to create RDK firebolt base layer, example application layer and Yocto Project derived SDK.
+# how to setup and build base-layer
   #Pre-requisite : host build machine is setup for yocto kirkstone building and has google repo tool installed, see  
   #"Build host deps for yocto https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#build-host-packages" and  
   #"install repo tool on build host https://android.googlesource.com/tools/repo "
@@ -10,7 +10,8 @@ repo for App SDK Base Layer definition &amp; development, version tracking and b
 
   #initialise and code sync with repo tool the manifest with repositories for this App SDK base layer project  
   #repo init is once per "abuild" dir setup  
-  repo init -u https://github.com/stagingrdkm/meta-rdke-appsdk-base-dev/ -m manifests/base/base.dev.xml  
+  #old repo init -u https://github.com/stagingrdkm/meta-rdke-appsdk-base-dev/ -m manifests/manifest-base.xml  
+  repo init -u https://github.com/rdkcentral/meta-bolt-distro/ -m manifests/base/base.dev.xml   
   repo sync --no-clone-bundle -v -j$(getconf _NPROCESSORS_ONLN)
 
   #yocto poky build environment setup script. Once per shell you are building in  
