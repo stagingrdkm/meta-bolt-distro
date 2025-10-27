@@ -28,7 +28,7 @@ Each release version of this distribution is derived from a specific release ver
 
   #initialise and code sync with repo tool the manifest with repositories for this App SDK base layer project  
   #repo init is once per "abuild" dir setup  
-  #old repo init -u https://github.com/stagingrdkm/meta-rdke-appsdk-base-dev/ -m manifests/manifest-base.xml  
+  #old repo init -u https://github.com/stagingrdkm/meta-bolt-distro/ -m manifests/manifest-base.xml  
   repo init -u https://github.com/rdkcentral/meta-bolt-distro/ -m manifests/base/base.dev.xml   
   repo sync --no-clone-bundle -v -j$(getconf _NPROCESSORS_ONLN)
 
