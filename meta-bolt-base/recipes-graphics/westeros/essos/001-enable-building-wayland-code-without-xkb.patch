@@ -1,0 +1,114 @@
+##############################################
+Date: 2025-06-25 14:21:18
+From: ben.gray@sky.uk
+Source: Sky
+Subject: Fixes the ESSOS build so that it can build a westeros / wayland client
+ version that doesn't require the xkbcommon library.
+############################################
+
+--- a/Makefile.am	2025-06-25 14:11:05.727735840 +0100
++++ b/Makefile.am	2025-06-25 14:21:18.578255063 +0100
+@@ -53,11 +53,14 @@
+ 
+ if HAVE_WAYLAND
+ if HAVE_WAYLAND_EGL
+-if HAVE_XKB
+ libessos_la_CXXFLAGS += -DHAVE_WAYLAND $(WAYLAND_CFLAGS) $(XKBCOMMON_CFLAGS)
+ libessos_la_LDFLAGS += $(WAYLAND_EGL_LIBS) $(WAYLAND_LIBS) $(XKBCOMMON_LIBS)
+ endif
+ endif
++
++if HAVE_XKB
++libessos_la_CXXFLAGS += $(XKBCOMMON_CFLAGS)
++libessos_la_LDFLAGS += $(XKBCOMMON_LIBS)
+ endif
+ 
+ if HAVE_EGL
+--- a/essos.cpp	2025-06-25 14:11:05.727735840 +0100
++++ b/essos.cpp	2025-06-25 14:30:18.862439079 +0100
+@@ -37,12 +37,16 @@
+ #include <vector>
+ #include <map>
+ #include <string>
++#include <cstdarg>
+ 
+ #ifdef HAVE_WAYLAND
+-#include <xkbcommon/xkbcommon.h>
+ #include <sys/mman.h>
+-#include "wayland-client.h"
+-#include "wayland-egl.h"
++#include <wayland-client.h>
++#include <wayland-egl.h>
++#include <simpleshell-client-protocol.h>
++#ifdef HAVE_XKB
++#include <xkbcommon.h>
++#endif
+ #endif
+ 
+ #ifdef HAVE_WESTEROS
+@@ -223,6 +227,7 @@
+    struct wl_shell_surface *shellSurface;
+    struct wl_shell *wlshell;
+ 
++   #ifdef HAVE_XKB
+    struct xkb_context *xkbCtx;
+    struct xkb_keymap *xkbKeymap;
+    struct xkb_state *xkbState;
+@@ -232,6 +237,8 @@
+    xkb_mod_index_t modCaps;
+    unsigned int modMask;
+    #endif
++
++   #endif
+    #ifdef HAVE_WESTEROS
+    WstGLCtx *glCtx;
+    #endif
+@@ -2394,6 +2401,7 @@
+ {
+    EssCtx *ctx= (EssCtx*)data;
+ 
++   #ifdef HAVE_XKB
+    if ( format == WL_KEYBOARD_KEYMAP_FORMAT_XKB_V1 )
+    {
+       void *map= mmap( 0, size, PROT_READ, MAP_SHARED, fd, 0 );
+@@ -2440,6 +2448,7 @@
+          munmap( map, size );
+       }
+    }
++   #endif
+ 
+    close( fd );
+ }
+@@ -2520,6 +2529,8 @@
+                                   uint32_t mods_locked, uint32_t group )
+ {
+    EssCtx *ctx= (EssCtx*)data;
++
++   #ifdef HAVE_XKB
+    if ( ctx->xkbState )
+    {
+       int wasActive, nowActive, key;
+@@ -2564,6 +2575,7 @@
+          essUpdateModifierKey( ctx, nowActive, key );
+       }
+    }
++   #endif
+ }
+ 
+ static void essKeyboardRepeatInfo( void *data, struct wl_keyboard *keyboard, int32_t rate, int32_t delay )
+@@ -3139,6 +3151,7 @@
+          ctx->wldisplay= 0;
+       }
+ 
++      #ifdef HAVE_XKB
+       if ( ctx->xkbCtx )
+       {
+          if ( ctx->xkbKeymap )
+@@ -3156,6 +3169,7 @@
+          xkb_context_unref( ctx->xkbCtx );
+          ctx->xkbCtx= 0;
+       }
++      #endif
+    }
+ }
+ 

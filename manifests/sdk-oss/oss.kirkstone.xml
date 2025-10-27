@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+      revisons are tip of kirkstone branches when analysed at 14 Aug 2025
+
+-->
+<manifest>
+  <remote name="github"
+         fetch="https://github.com/"/>
+
+  <remote name="oe-org"
+         fetch="https://git.openembedded.org"/>
+
+  <remote name="yocto"
+         fetch="https://git.yoctoproject.org/"/>
+
+  <default remote="github" revision="master" sync-j="32" />
+
+<!--18/08/2025 commit on its kirkstone branch. Fixes still happen. To agree what revision to fix on
+       see its revisions on https://github.com/yoctoproject/poky/commits/kirkstone/ 
+  Currently taking from yocto directly. To be discussed if we should not take RDK poky fork used by MW/OSS layer instead and what version.
+  RDK7.0 uses this tag https://github.com/rdkcentral/poky/tree/rdk-4.2.0 which is significantly older version of 15/11/2024 with changes on top --> 
+  <project remote="github"
+             name="yoctoproject/poky"
+         revision="39df9602b1c0339519be81d1cba9a4a25379309a"
+         upstream="kirkstone"
+             path="."/>
+
+
+<!--is 13/07/2025 commit on its kirkstone branch. so far last commit. To agree what revision to fix on
+      see https://github.com/openembedded/meta-openembedded/commits/kirkstone/ 
+ Currently taking from origin maintainer directly. To be discussed if we should not take RDK fork used by MW/OSS layer instead and what version.
+ RDK7.0 uses tag https://github.com/rdkcentral/meta-openembedded/tree/rdk-4.0.0 which is significantly older version of 13/10/2024 -->
+  <project remote="oe-org"
+             name="meta-openembedded"
+         upstream="kirkstone"
+         revision="06fc0278f10d630838d703dde707bbf0e2999873"
+             path="meta-openembedded"/>
+
+<!-- is 16/07/2025 commit on kirkstone branch of meta-virtualization  version, so far last one.
+      see https://git.yoctoproject.org/meta-virtualization/commit/?h=kirkstone&id=3e4dba95e6b5f5f68d0b3a5899b106c89da59428 -->
+  <project remote="yocto"
+             name="meta-virtualization"
+         revision="3e4dba95e6b5f5f68d0b3a5899b106c89da59428"
+             path="meta-virtualization"/>
+
+</manifest>

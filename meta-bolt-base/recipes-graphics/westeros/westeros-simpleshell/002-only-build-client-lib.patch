@@ -1,0 +1,18 @@
+##############################################
+Date: 2025-06-16
+From: ben.gray@sky.uk
+Source: Sky
+Subject: App SDK is for apps only, so only include client part not server part as well
+##############################################
+
+--- a/simpleshell/Makefile.am	2025-06-16 22:42:53.706900219 +0100
++++ b/simpleshell/Makefile.am	2025-06-16 22:48:24.008288919 +0100
+@@ -26,7 +26,7 @@
+ AM_LDFLAGS=$(WAYLANDLIB)
+ AM_CFLAGS = $(AM_CXXFLAGS)
+ 
+-lib_LTLIBRARIES = libwesteros_simpleshell_server.la libwesteros_simpleshell_client.la
++lib_LTLIBRARIES = libwesteros_simpleshell_client.la
+ 
+ libwesteros_simpleshell_server_la_SOURCES = westeros-simpleshell.cpp ${srcdir}/protocol/simpleshell-protocol.c
+ libwesteros_simpleshell_server_la_include_HEADERS = westeros-simpleshell.h ${srcdir}/protocol/simpleshell-client-protocol.h

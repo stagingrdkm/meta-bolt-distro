@@ -1,0 +1,23 @@
+##############################################
+Date: 2025-06-25
+From: ben.gray@sky.uk
+Source: Sky
+Subject: Disable the wrappers component from the build if just building the rialto client library
+############################################
+
+--- a/CMakeLists.txt	2025-06-25 11:44:45.570210551 +0100
++++ b/CMakeLists.txt	2025-06-25 11:45:24.350250653 +0100
+@@ -228,9 +228,12 @@
+ add_subdirectory( common )
+ add_subdirectory( media )
+ add_subdirectory( logging )
+-add_subdirectory( wrappers )
+ add_subdirectory( proto )
+ 
++if( ENABLE_SERVER OR ENABLE_SERVER_MANAGER )
++    add_subdirectory( wrappers )
++endif()
++
+ if( ENABLE_SERVER_MANAGER )
+     add_subdirectory( serverManager )
+ endif()

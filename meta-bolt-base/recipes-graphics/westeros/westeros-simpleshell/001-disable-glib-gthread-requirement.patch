@@ -1,0 +1,29 @@
+##############################################
+Date: 2025-06-16
+From: ben.gray@sky.uk
+Source: Sky
+Subject: no glib gthread check needed for client part 
+############################################
+
+--- a/configure.ac	2025-06-16 22:23:52.575903956 +0100
++++ b/configure.ac	2025-06-16 22:28:14.998300196 +0100
+@@ -66,8 +66,6 @@
+ [AM_DEFAULT_VERBOSITY=1
+ AC_SUBST(AM_DEFAULT_VERBOSITY)])
+ 
+-PKG_CHECK_MODULES([GLIB],[glib-2.0 >= 2.22.5])
+-PKG_CHECK_MODULES([GTHREAD],[gthread-2.0 >= 2.38.2])
+ PKG_CHECK_MODULES([WAYLAND_CLIENT],[wayland-client >= 1.6.0])
+ PKG_CHECK_MODULES([WAYLAND_SERVER],[wayland-server >= 1.6.0])
+ PKG_CHECK_MODULES([WAYLAND_EGL],[wayland-egl >= 0.0],[WAYLAND_EGL_DETECTED=true],[WAYLAND_EGL_DETECTED=false])
+--- a/simpleshell/configure.ac	2025-06-16 22:39:25.884104109 +0100
++++ b/simpleshell/configure.ac	2025-06-16 22:41:18.685548065 +0100
+@@ -52,8 +52,6 @@
+ [AM_DEFAULT_VERBOSITY=1
+ AC_SUBST(AM_DEFAULT_VERBOSITY)])
+ 
+-PKG_CHECK_MODULES([GLIB],[glib-2.0 >= 2.22.5])
+-PKG_CHECK_MODULES([GTHREAD],[gthread-2.0 >= 2.38.2])
+ PKG_CHECK_MODULES([WAYLAND_CLIENT],[wayland-client >= 1.6.0])
+ PKG_CHECK_MODULES([WAYLAND_SERVER],[wayland-server >= 1.6.0])
+ 

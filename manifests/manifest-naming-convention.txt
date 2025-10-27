@@ -1,0 +1,65 @@
+Naming convention within this "manifests" dir of this git repository
+
+1)Directories within "manifests" dir
+---------------------------------------
+app/
+app-restricted/
+base/
+runtime/
+sdk-oss
+sdk-tools
+
+2)Naming and dir convention within manifests/app dir
+---------------------------------------
+manifests/app/companyname/appname.dev.xml 
+manifests/app/companyname/rel/appname.rx.y.z.xml 
+  
+  [/companyname/]  per company releasing/maintaining such appname.
+  [appname.dev.xml] for manifest file name that contains dev branch of  meta-bolt-app-appname-company associated with the app.
+  [/companyname/rel/appname.rx.y.z.xml] for release versions of app, manifest file name contains the associated version as extension in name 
+  [appname.rx.y.z.xml] for manifest file name with version extension in name for release app manifests, 
+      those manifests need to be fixed revision manifests that always allow the exact same  version of the app to be  rebuild/replicated from sources in that manifest
+  
+Example:  
+manifests/app/rdkm/appname.dev.xml 
+manifests/app/rdkm/rel/bolt-examples.r1.0.0.xml
+
+manifests/app-restricted/ is for apps that have manifests that points to repositories that are not open source, require specific access rights
+
+
+3)Naming convention within /base dir
+---------------------------------------
+manifests/base/base.dev.xml
+manifests/base/rel/
+
+
+4)Naming and dir convention within /runtime dir
+---------------------------------------
+/runtime/runtimename/runtimename.companyname.dev.xml     
+/runtime/runtimename/rel/runtimename.companyname.rx.y.z.xml   
+  [runtimename.companyname.dev.xmll] this manifest file name that contains dev branch of  meta-rdke-app-appname-company associated with this runtime
+  [rel/runtimename.companyname.rx.y.z.xml] for release version of runtime, manifest file name contains the associated version as extension in name 
+      those manifests need to be fixed revision manifests that always allow the exact same  version of the runtime to be rebuild/replicated from sources in that manifest
+
+Example:
+
+runtime/wpe/wpe238.rdkm.dev.xml
+runtime/wpe/wpe238.comcast.dev.xml 
+runtime/wpe/wpe246.igalia.dev.xml
+runtime/wpe/rel/wpe238.rdkm.r4.1.xml
+
+runtime/cobalt/cobalt25.rdkm.dev.xml
+runtime/cobalt/rel/cobalt25.rdkm.r1.0.xml
+
+--------------------------------------------------------------------------------------------------------
+5)Proposed meta-layer names: TODO still to be agreed
+--------------------------------------------------------------------------------------------------------
+meta-bolt-base   for baselayer
+
+meta-bolt-run-runtimename-company     for a runtime
+ meta-bolt-run-wpe             for default common WPE browser runtime maintained by RDK-M
+ meta-bolt-run-wpe-companyA    CompanyA needs its own merge rights/layer to maintaing and/or sharing its slightly different flavor of WPE browser (eg for production reaons or for staying ahead wih upstream)
+
+meta-bolt-app-appname-company         for an application
+ meta-bolt-app-amazonprime-rdkm     meta-layer for Amazon Prime application maintained by RDK-M
+

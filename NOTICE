@@ -1,0 +1,30 @@
+This repo contains meta-layers that go with a Yocto build system.
+
+It contains files which are:
+Copyright COPYRIGHT_HOLDERS
+Licensed under the MIT License
+
+Some files are:
+Copyright COPYRIGHT_HOLDERS
+Licensed under the Apache License, Version 2.0
+
+The copyright holder entries are:
+Copyright 2025 RDK Management
+Copyright 2025 Sky UK
+Copyright 2025 Liberty Global Service B.V.
+Copyright 2025 Bart Catrysse
+Copyright 2025 Comcast Cable Communications Management, LLC
+
+Additional copyrights as indicated:
+ 
+Copyright 2016 TATA ELXSI
+Copyright 2016 Metrological
+Licensed under the Apache License, Version 2.0
+ 
+Copyright 2020 Metrological.
+Licensed under the Apache License, Version 2.0
+
+Some material is derived from openembedded.org and yocto project and is licensed in the same manner here (MIT for metadata; source code to match the associated recipe license).
+
+Recipes and patches under meta-bolt-base/recipes-gplv2 are from http://git.yoctoproject.org/cgit.cgi/meta-gplv2/
+Only recipes required for the base-layer build were copied there.

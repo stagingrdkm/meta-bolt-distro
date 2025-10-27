@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ Firebolt base layer image build 
+ repo init -u https://github.com/stagingrdkm/meta-rdke-appsdk-base-dev -m /manifests/base/base.dev.xml
+ instructions https://github.com/stagingrdkm/meta-rdke-appsdk-base-dev/blob/develop/README.md
+ image recipe for bolt base layer profile1 :  bitbake rdke-app-baselayer-p1
+-->
+<manifest>
+  <include name="manifests/sdk-oss/oss.kirkstone.xml" />
+
+  <project remote="github" name="rdkcentral/meta-bolt-distro" revision="develop" path="bolt"/>
+
+</manifest>

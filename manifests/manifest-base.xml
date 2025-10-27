@@ -34,8 +34,8 @@
              path="meta-virtualization"/>
 
   <project remote="github"
-             name="stagingrdkm/meta-rdk-app-sdk-base-dev"
-         revision="main"
-             path="meta-rdk-app-sdk-base-dev"/>
+             name="stagingrdkm/meta-bolt-distro"
+         revision="develop"
+             path="bolt"/>
 
 </manifest>
