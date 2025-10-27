@@ -1,5 +1,23 @@
-# meta-bolt-distro
-Repository providing Yocto Project distribution allowing to create RDK firebolt base layer, example application layer and Yocto Project derived SDK.
+# Firebolt meta-bolt-distro
+This repository defines and provides the **RDK Firebolt Yocto distribution**, derived from Yocto **Poky** and tailored to build hardware-agnostic **Firebolt Native Applications** and **runtimes**.
+
+A Firebolt Native Application is referred to as a **"bolt" app** or simply a **"bolt"**. Each bolt represents an application or runtime layer (in a defined OCI artifact format) that, together with the Firebolt mandatory **commom base layer**, forms a second-generation Downloadable Application Container (**DAC2**) within RDK. The base layer is defined in this distribution (see **meta-bolt-base**).
+
+To support bolt application development in other build and development environments than Yocto, each release of this distribution also has an associated Yocto SDK export, available on the firebolt-sdk repository. The **SDK** release then includes the **cross-compilation toolchain** defined by this distribution (supporting arm, arm64, and amd64 targets), along with **binary releases of the base layer**, header files, and other tools required to build bolt applications.
+
+A **release version** of this distribution, together with its associated base-layer version, provides **support for one or more specific major RDK OS versions** (e.g., **RDK-8**).  
+Bolt applications intended to run across devices within a particular major RDK OS version must be built using the corresponding **compatible release** of this distribution and its base layer.
+
+Each release version of this distribution is derived from a specific release version the Yocto Poky reference distribution.
+
+**This repository includes**:
+
+- bitbake config files defining the "bolt" distro
+- meta-bolt-base - meta-layer with recipes providing configuration for packages used by the base layer
+- meta-bolt-app-examples - meta-layer with recipes required for building sample applications. This layer is not enabled by default; to use it, it must be added to the bblayers.conf file
+- meta-bolt-tools - meta-layer with recipes for tools related to creation of OCI artifacts from build artifacts and interaction with STB
+- manifests - repo tool manifest files defining all meta-layer repositories and versions required for specific version of this distribution and to build specific version of base layer or example application layer oci artifacts using this distribution.
+
 # how to setup and build base-layer
   #Pre-requisite : host build machine is setup for yocto kirkstone building and has google repo tool installed, see  
   #"Build host deps for yocto https://docs.yoctoproject.org/brief-yoctoprojectqs/index.html#build-host-packages" and  
